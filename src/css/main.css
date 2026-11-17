@@ -1,0 +1,8 @@
+@import 'lenis/dist/lenis.css';
+@import './base.css';
+@import './buttons.css';
+@import './header.css';
+@import './chrome.css';
+@import './home.css';
+@import './pages.css';
+@import './footer.css';

@@ -1,0 +1,108 @@
+import type { Project, ProjectFilter } from './types';
+
+export const projects: Project[] = [
+  {
+    slug: 'wannamodel',
+    title: 'WannaModel',
+    category: 'Live product',
+    tags: ['Computer Vision', 'Next.js', 'SaaS'],
+    year: '2026',
+    image: '/images/wannamodel.webp',
+    color: '#0c0f0a',
+    href: 'https://www.wannamodel.org',
+    live: true,
+    featured: true,
+    summary:
+      'My own AI product: upload a selfie and a neural network maps your facial features and scores your modeling potential in seconds.',
+    caseStudy: {
+      url: 'wannamodel.org',
+      // Real numbers: search data from Google Search Console (28 days to 17 Nov 2026),
+      // product facts from the live site. Refresh these now and then.
+      stats: [
+        { value: 1500, suffix: '+', label: 'Monthly clicks from Google search' },
+        { value: 2, prefix: '#', label: 'On Google for “model potential test”' },
+        { value: 6, suffix: '×', label: 'Search traffic growth in 3 months' },
+        { value: 50, suffix: '+', label: 'Facial landmarks mapped' },
+        { value: 14, label: 'Features scored' },
+        { value: 3, prefix: '~', suffix: 's', label: 'From upload to result' },
+      ],
+      statsNote: 'Search figures: Google Search Console, last 28 days (Nov 2026).',
+      built: [
+        'Face-analysis pipeline with separate models for male and female faces',
+        'Per-trait scores, global percentile ranking and shareable score cards',
+        'Accounts, private photo storage and a freemium Pro plan',
+        'Next.js front-end and SEO content that rank top 3 on Google for core searches like “model potential” and “could I be a model face test”',
+      ],
+    },
+  },
+  {
+    slug: 'retinopathy',
+    title: 'Retinopathy Detection',
+    category: 'Deep Learning',
+    tags: ['CNN', 'TensorFlow', 'React'],
+    year: '2025',
+    image: '/images/covers/retinopathy.svg',
+    color: '#1d2b3a',
+    href: 'https://github.com/Moiz3012',
+    live: false,
+    featured: false,
+    summary:
+      'Final-year project: a CNN detects diabetic retinopathy from retina scans, served in a React app with real-time analysis and automated reports.',
+  },
+  {
+    slug: 'air-quality',
+    title: 'Air Quality Forecasting',
+    category: 'Deep Learning',
+    tags: ['Time series', 'Regression', 'Python'],
+    year: '2025',
+    image: '/images/covers/air-quality.svg',
+    color: '#23332b',
+    href: 'https://github.com/Moiz3012',
+    live: false,
+    featured: false,
+    summary: 'Forecasting PM2.5 levels with deep learning — data pipeline, regression model, evaluation and trend visualisation.',
+  },
+  {
+    slug: 'news-classifier',
+    title: 'News Classifier',
+    category: 'NLP',
+    tags: ['Embeddings', 'Neural Network', 'Python'],
+    year: '2025',
+    image: '/images/covers/news-classifier.svg',
+    color: '#3a2a1d',
+    href: 'https://github.com/Moiz3012/News-Category-Classifier-NLP-Project-',
+    live: false,
+    featured: false,
+    summary: 'A neural network that sorts news headlines into World, Sports, Business and Sci/Tech using tokenisation and embedding layers.',
+  },
+  {
+    slug: 'heart-disease',
+    title: 'Heart Disease Prediction',
+    category: 'ML',
+    tags: ['Logistic Regression', 'Scikit-learn'],
+    year: '2025',
+    image: '/images/covers/heart-disease.svg',
+    color: '#3a1d24',
+    href: 'https://github.com/Moiz3012/Heart_Disease_Predcition',
+    live: false,
+    featured: false,
+    summary: 'Binary classifier for heart-disease risk with feature scaling and recall-focused evaluation, wrapped in a simple web app.',
+  },
+  {
+    slug: 'car-price',
+    title: 'Car Price Prediction',
+    category: 'ML',
+    tags: ['Regression', 'Web app'],
+    year: '2025',
+    image: '/images/covers/car-price.svg',
+    color: '#2a2440',
+    href: 'https://github.com/Moiz3012/Car-Price-Prediction',
+    live: false,
+    featured: false,
+    summary: 'Machine-learning web app that predicts the selling price of a used car from its specs.',
+  },
+];
+
+export const projectFilters: ProjectFilter[] = ['All', 'Live product', 'Deep Learning', 'NLP', 'ML'];
+
+export const featuredProject = projects.find((p) => p.featured);

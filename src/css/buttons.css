@@ -1,0 +1,86 @@
+/* Shared magnetic button: fill circle rises from the bottom on hover (driven by JS) */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  will-change: transform;
+  transition: color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.btn-fill {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  height: 200%;
+  top: 100%;
+  border-radius: 50%;
+  background: var(--blue);
+  z-index: -1;
+  pointer-events: none;
+}
+.btn-text {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+.btn-text-inner {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.btn.is-hovered {
+  color: var(--white);
+}
+
+/* shapes */
+.btn--round {
+  width: clamp(130px, 11.5em, 200px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+.btn--xl {
+  width: clamp(150px, 13em, 230px);
+}
+.btn--pill {
+  border-radius: 999px;
+  padding: 1.35em 2.4em;
+  font-size: 1rem;
+}
+.btn--icon {
+  width: 4.2em;
+  height: 4.2em;
+  border-radius: 50%;
+}
+.btn--icon svg {
+  width: 1.15em;
+  height: 1.15em;
+}
+
+/* themes */
+.btn--dark {
+  background: var(--dark);
+  color: var(--white);
+}
+.btn--blue {
+  background: var(--blue);
+  color: var(--white);
+}
+.btn--blue .btn-fill {
+  background: var(--blue-dark);
+}
+.btn--outline {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.btn--outline.is-active {
+  background: var(--dark);
+  border-color: var(--dark);
+  color: var(--white);
+}
+.btn--outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}

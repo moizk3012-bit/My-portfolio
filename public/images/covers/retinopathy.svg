@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<defs>
+  <radialGradient id="glow" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#ffffff" stop-opacity=".10"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity=".08"/></pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#455CE9" stop-opacity=".45"/><stop offset="1" stop-color="#455CE9" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="800" height="500" fill="#1d2b3a"/>
+<rect width="800" height="500" fill="url(#dots)"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<g transform="translate(400 235)" fill="none" stroke="#fff"><circle r="150" stroke-opacity="0.12" stroke-width="1.5"/><circle r="120" stroke-opacity="0.16999999999999998" stroke-width="1.5"/><circle r="92" stroke-opacity="0.21666666666666667" stroke-width="1.5"/><circle r="62" fill="#e8734a" fill-opacity=".85" stroke="none"/><circle r="26" fill="#f6c27a" stroke="none"/><path d="M-20 -150 Q -15 -105 -60 -60" stroke="#ff9b7a" stroke-opacity=".7" stroke-width="3"/><path d="M30 -148 Q 65 -101.5 50 -55" stroke="#ff9b7a" stroke-opacity=".7" stroke-width="3"/><path d="M-148 10 Q -79 7.5 -60 5" stroke="#ff9b7a" stroke-opacity=".7" stroke-width="3"/><path d="M140 40 Q 124 29 58 18" stroke="#ff9b7a" stroke-opacity=".7" stroke-width="3"/><path d="M-90 120 Q -40 84 -40 48" stroke="#ff9b7a" stroke-opacity=".7" stroke-width="3"/><path d="M80 128 Q 80 91.5 30 55" stroke="#ff9b7a" stroke-opacity=".7" stroke-width="3"/><circle r="150" stroke="#455CE9" stroke-width="4" stroke-dasharray="90 852" stroke-linecap="round"/><rect x="70" y="-140" width="150" height="34" rx="17" fill="#455CE9" stroke="none"/><text x="145" y="-117" text-anchor="middle" font-family="Helvetica, Arial" font-size="14" fill="#fff" stroke="none">DR detected · 0.97</text></g>
+<text x="40" y="464" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="2" fill="#ffffff" fill-opacity=".55">DEEP LEARNING · CNN</text>
+</svg>

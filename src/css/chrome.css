@@ -1,0 +1,271 @@
+/* ── Curved edges shared by preloader + page transition ── */
+.curve {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  height: 0;
+  background: var(--dark-2);
+}
+.curve--bottom {
+  top: calc(100% - 1px);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+.curve--top {
+  bottom: calc(100% - 1px);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+/* ── Preloader ── */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  color: var(--white);
+}
+.no-preloader .preloader {
+  display: none;
+}
+.preloader-panel {
+  position: absolute;
+  inset: 0;
+  background: var(--dark-2);
+  display: grid;
+  place-items: center;
+}
+.preloader-word,
+.transition-label {
+  font-size: clamp(2rem, 3.6vw, 4rem);
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+}
+.preloader-word .dot,
+.transition-label .dot {
+  width: 0.22em;
+  height: 0.22em;
+  margin-right: 0.45em;
+}
+
+/* ── Page transition curtain ── */
+.transition {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  visibility: hidden;
+  color: var(--white);
+}
+.transition.is-active {
+  visibility: visible;
+  pointer-events: all;
+}
+.transition-panel {
+  position: absolute;
+  inset: 0;
+  background: var(--dark-2);
+  display: grid;
+  place-items: center;
+}
+
+/* ── Hamburger (appears after scrolling past the header) ── */
+.hamburger {
+  position: fixed;
+  top: clamp(16px, 2vw, 36px);
+  right: clamp(16px, 2vw, 36px);
+  z-index: 800;
+  width: clamp(56px, 5.2em, 92px);
+  height: clamp(56px, 5.2em, 92px);
+  border-radius: 50%;
+  background: var(--dark);
+  color: var(--white);
+  overflow: hidden;
+  isolation: isolate;
+  transform: scale(0);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.hamburger .btn-fill {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  height: 200%;
+  top: 100%;
+  border-radius: 50%;
+  background: var(--blue);
+  z-index: -1;
+}
+.hamburger .btn-text {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+.hamburger-lines {
+  position: relative;
+  width: 34%;
+  height: 10px;
+}
+.hamburger-lines span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 0.4s var(--ease), top 0.4s var(--ease);
+}
+.hamburger-lines span:first-child {
+  top: 0;
+}
+.hamburger-lines span:last-child {
+  top: 100%;
+}
+.hamburger.is-open .hamburger-lines span:first-child {
+  top: 50%;
+  transform: rotate(45deg);
+}
+.hamburger.is-open .hamburger-lines span:last-child {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+.hamburger.is-open {
+  background: var(--blue);
+}
+
+/* ── Side menu ── */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 750;
+  width: min(100vw, max(480px, 38vw));
+  color: var(--white);
+  transform: translateX(calc(100% + 15vw));
+}
+.menu-curve {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(100% - 1px);
+  width: 15vw;
+  height: 100%;
+  fill: var(--dark);
+}
+.menu-inner {
+  position: relative;
+  height: 100%;
+  background: var(--dark);
+  padding: clamp(100px, 18vh, 200px) clamp(28px, 6vw, 110px) clamp(32px, 6vh, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  padding-bottom: 1.6rem;
+  margin-bottom: 2.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.menu-links li {
+  overflow: hidden;
+}
+.menu-link {
+  display: flex;
+  align-items: center;
+  font-size: clamp(2.6rem, 4.4vw, 5rem);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+.menu-link-text {
+  display: inline-block;
+  transition: transform 0.5s var(--ease);
+}
+.menu-dot {
+  width: 0.14em;
+  height: 0.14em;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 0.35em;
+  transform: scale(0);
+  transition: transform 0.4s var(--ease);
+}
+.menu-link:hover .menu-dot,
+.menu-link.is-active .menu-dot {
+  transform: scale(1);
+}
+.menu-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em 1.8em;
+}
+.menu-group:last-child .menu-label {
+  border: 0;
+  margin-bottom: 0.6rem;
+}
+
+/* ── Floating project preview that follows the cursor ── */
+.preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 600;
+  width: clamp(280px, 26vw, 460px);
+  height: clamp(240px, 22vw, 400px);
+  overflow: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+}
+.preview-slides {
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+.preview-slide {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.preview-slide img {
+  width: 82%;
+  height: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+.preview-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 610;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+@media (max-width: 767px) {
+  .menu {
+    width: 100vw;
+  }
+  .menu-curve {
+    display: none;
+  }
+  .hamburger {
+    transform: scale(1);
+  }
+}

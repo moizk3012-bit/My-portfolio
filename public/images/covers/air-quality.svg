@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<defs>
+  <radialGradient id="glow" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#ffffff" stop-opacity=".10"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity=".08"/></pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#455CE9" stop-opacity=".45"/><stop offset="1" stop-color="#455CE9" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="800" height="500" fill="#23332b"/>
+<rect width="800" height="500" fill="url(#dots)"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<path d="M60.0 278.0 L88.0 260.6 L116.0 255.0 L144.0 255.5 L172.0 255.0 L200.0 250.1 L228.0 243.4 L256.0 241.4 L284.0 250.6 L312.0 272.7 L340.0 302.1 L368.0 328.3 L396.0 340.3 L424.0 332.2 L452.0 306.0 L480.0 270.7 L508.0 237.8 L508 400 L60 400 Z" fill="url(#fade)"/><path d="M60.0 278.0 L88.0 260.6 L116.0 255.0 L144.0 255.5 L172.0 255.0 L200.0 250.1 L228.0 243.4 L256.0 241.4 L284.0 250.6 L312.0 272.7 L340.0 302.1 L368.0 328.3 L396.0 340.3 L424.0 332.2 L452.0 306.0 L480.0 270.7 L508.0 237.8" fill="none" stroke="#fff" stroke-width="3"/><path d="M508.0 237.8 L536.0 215.9 L564.0 206.8 L592.0 206.1 L620.0 206.6 L648.0 203.2 L676.0 196.5 L704.0 192.1 L732.0 197.0" fill="none" stroke="#455CE9" stroke-width="3" stroke-dasharray="8 8"/><circle cx="732" cy="197.03179080628212" r="7" fill="#455CE9"/><line x1="508" y1="110" x2="508" y2="400" stroke="#fff" stroke-opacity=".25" stroke-dasharray="4 6"/><text x="520" y="128" font-family="Helvetica, Arial" font-size="14" fill="#fff" fill-opacity=".7">forecast →</text><text x="60" y="110" font-family="Helvetica, Arial" font-size="40" fill="#fff">PM2.5</text>
+<text x="40" y="464" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="2" fill="#ffffff" fill-opacity=".55">DEEP LEARNING · TIME SERIES</text>
+</svg>

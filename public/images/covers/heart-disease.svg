@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<defs>
+  <radialGradient id="glow" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#ffffff" stop-opacity=".10"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity=".08"/></pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#455CE9" stop-opacity=".45"/><stop offset="1" stop-color="#455CE9" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="800" height="500" fill="#3a1d24"/>
+<rect width="800" height="500" fill="url(#dots)"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<path d="M40 260 L250 260 L275 230 L300 260 L330 260 L350 120 L380 380 L405 210 L425 260 L520 260 L540 240 L560 260 L760 260" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="10" stroke-linejoin="round"/><path d="M40 260 L250 260 L275 230 L300 260 L330 260 L350 120 L380 380 L405 210 L425 260 L520 260 L540 240 L560 260 L760 260" fill="none" stroke="#ff6b81" stroke-width="4" stroke-linejoin="round"/><rect x="560" y="90" width="190" height="64" rx="32" fill="#455CE9"/><text x="655" y="130" text-anchor="middle" font-family="Helvetica, Arial" font-size="18" fill="#fff">Risk: Low · 0.12</text><path d="M110 120 c0 -26 40 -34 52 -8 c12 -26 52 -18 52 8 c0 34 -52 60 -52 60 s-52 -26 -52 -60z" fill="#ff6b81" fill-opacity=".9"/>
+<text x="40" y="464" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="2" fill="#ffffff" fill-opacity=".55">MACHINE LEARNING · CLASSIFICATION</text>
+</svg>
