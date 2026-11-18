@@ -12,11 +12,20 @@ describe('prerendered pages', () => {
   });
 
   it('marks the current page in the header nav', () => {
-    expect(render('/work/')).toMatch(/<a href="\/work\/" class="nav-link is-active" aria-current="page">/);
+    expect(render('/work/')).toMatch(/<a href="\/My-portfolio\/work\/" class="nav-link is-active" aria-current="page">/);
+  });
+
+  it('prefixes every internal link and image with the base path', () => {
+    for (const { path } of routes) {
+      const html = render(path);
+      const roots = [...html.matchAll(/(?:href|src)="(\/[^"]*)"/g)].map((m) => m[1]!);
+      expect(roots.length).toBeGreaterThan(5);
+      for (const url of roots) expect(url.startsWith('/My-portfolio/'), `${path}: ${url}`).toBe(true);
+    }
   });
 
   it('does not preload the hover-preview images ahead of the hero', () => {
-    expect(render('/')).not.toMatch(/rel="preload" as="image" href="\/images\/covers/);
+    expect(render('/')).not.toMatch(/rel="preload" as="image" href="\/My-portfolio\/images\/covers/);
   });
 
   it('keeps the closed menu out of the tab order', () => {

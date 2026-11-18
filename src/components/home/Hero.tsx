@@ -6,6 +6,7 @@ import { useNeuralNetwork } from '@/hooks/useNeuralNetwork';
 import { Header } from '@/components/layout/Header';
 import { ArrowIcon, GlobeIcon } from '@/components/ui/Icon';
 import { Marquee } from '@/components/ui/Marquee';
+import { asset } from '@/lib/paths';
 
 function NeuralNetworkCanvas({ opacity }: { opacity: number }) {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -26,7 +27,7 @@ export function Hero() {
       <Header page="home" theme="light" />
       {site.heroNetwork && <NeuralNetworkCanvas opacity={site.heroNetworkOpacity} />}
       <div ref={photoRef} className="hero-photo">
-        <img src={person.photo} alt={`Portrait of ${person.name}`} width={1122} height={1038} fetchPriority="high" />
+        <img src={asset(person.photo)} alt={`Portrait of ${person.name}`} width={1122} height={1038} fetchPriority="high" />
       </div>
       <div className="hero-pill" data-enter>
         <p>

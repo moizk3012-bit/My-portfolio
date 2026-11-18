@@ -6,6 +6,7 @@ import { ArrowIcon } from '@/components/ui/Icon';
 import { WordReveal } from '@/components/ui/Reveal';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { Page } from './Page';
+import { asset } from '@/lib/paths';
 
 export default function ContactPage() {
   return (
@@ -16,7 +17,7 @@ export default function ContactPage() {
           <h1 className="page-title contact-title">
             <span className="footer-title-row">
               <span className="avatar">
-                <img src={person.avatar} alt="" width={200} height={200} />
+                <img src={asset(person.avatar)} alt="" width={200} height={200} />
               </span>
               <WordReveal lines="Let’s start a" />
             </span>

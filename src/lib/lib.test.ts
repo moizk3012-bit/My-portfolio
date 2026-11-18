@@ -5,6 +5,7 @@ import { isExternal, normalizePath, pageIdFromPath, pageLabel } from './routes';
 import { projectHref } from './projects';
 import { headTags, robotsTxt, sitemapXml } from './seo';
 import { projects } from '@/data';
+import { asset, BASE_PATH, ROUTER_BASENAME } from './paths';
 
 describe('formatLocalTime', () => {
   it('formats Pakistan time with GMT offset', () => {
@@ -60,12 +61,21 @@ describe('routes', () => {
   });
 });
 
+describe('paths', () => {
+  it('serves everything from the repo sub-folder', () => {
+    expect(BASE_PATH).toBe('/My-portfolio/');
+    expect(ROUTER_BASENAME).toBe('/My-portfolio');
+    expect(asset('/images/avatar.webp')).toBe('/My-portfolio/images/avatar.webp');
+    expect(asset('images/og.jpg')).toBe('/My-portfolio/images/og.jpg');
+  });
+});
+
 describe('seo', () => {
   it('uses absolute canonical and social image URLs', () => {
     const head = headTags('about');
     expect(head).toContain('<title>About • Moiz Azad</title>');
-    expect(head).toContain('rel="canonical" href="https://moizk3012-bit.github.io/about/"');
-    expect(head).toContain('og:image" content="https://moizk3012-bit.github.io/images/og.jpg"');
+    expect(head).toContain('rel="canonical" href="https://moizk3012-bit.github.io/My-portfolio/about/"');
+    expect(head).toContain('og:image" content="https://moizk3012-bit.github.io/My-portfolio/images/og.jpg"');
   });
 
   it('embeds Person structured data on Home only, safely', () => {
@@ -77,6 +87,6 @@ describe('seo', () => {
 
   it('lists every page in the sitemap', () => {
     expect(sitemapXml().match(/<loc>/g)).toHaveLength(4);
-    expect(robotsTxt()).toContain('Sitemap: https://moizk3012-bit.github.io/sitemap.xml');
+    expect(robotsTxt()).toContain('Sitemap: https://moizk3012-bit.github.io/My-portfolio/sitemap.xml');
   });
 });

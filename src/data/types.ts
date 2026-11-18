@@ -89,8 +89,10 @@ export interface Service {
 }
 
 export interface SiteSettings {
-  /** Public address of the deployed site (canonical links, social previews, sitemap) */
+  /** Public address of the deployed site, without trailing slash (canonical links, social previews, sitemap) */
   url: string;
+  /** Path the site is served from, with leading and trailing slash ("/" at a domain root) */
+  basePath: string;
   /** Faint neural-network lines behind the hero photo */
   heroNetwork: boolean;
   heroNetworkOpacity: number;

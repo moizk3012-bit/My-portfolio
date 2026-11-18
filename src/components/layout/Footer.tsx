@@ -6,6 +6,7 @@ import { AppLink } from '@/components/ui/AppLink';
 import { Button } from '@/components/ui/Button';
 import { ArrowIcon } from '@/components/ui/Icon';
 import { Parallax } from '@/components/ui/Reveal';
+import { asset } from '@/lib/paths';
 
 export function SocialLinks({ separator }: { separator?: 'br' }) {
   return socials.map((s, i) => (
@@ -71,7 +72,7 @@ export function Footer({ compact = false, bg = '#ffffff' }: { compact?: boolean;
             <h2 className="footer-title">
               <span className="footer-title-row">
                 <span className="avatar">
-                  <img src={person.avatar} alt="" width={200} height={200} loading="lazy" />
+                  <img src={asset(person.avatar)} alt="" width={200} height={200} loading="lazy" />
                 </span>
                 <span>Let’s work</span>
               </span>

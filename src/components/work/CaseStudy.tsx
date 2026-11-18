@@ -2,6 +2,7 @@ import type { Project } from '@/data';
 import { Button } from '@/components/ui/Button';
 import { FadeIn, Parallax } from '@/components/ui/Reveal';
 import { Stat } from '@/components/ui/Stat';
+import { asset } from '@/lib/paths';
 
 /** Featured live-product block with a browser-framed screenshot and real stats. */
 export function CaseStudy({ project }: { project: Project }) {
@@ -18,7 +19,7 @@ export function CaseStudy({ project }: { project: Project }) {
               <span />
               <p className="browser-url">{study.url}</p>
             </div>
-            <img src={project.image} alt={`Screenshot of the ${project.title} website`} width={1440} height={900} loading="lazy" />
+            <img src={asset(project.image)} alt={`Screenshot of the ${project.title} website`} width={1440} height={900} loading="lazy" />
           </div>
         </Parallax>
         <div className="case-body">

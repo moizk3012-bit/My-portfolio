@@ -1,7 +1,10 @@
 import type { NavItem, PageId, PageMeta, SiteSettings } from './types';
 
 export const site: SiteSettings = {
-  url: 'https://moizk3012-bit.github.io', // change if you deploy somewhere else
+  // GitHub Pages project site: https://moizk3012-bit.github.io/My-portfolio/
+  // If you move the site, change both values (basePath must match the repo name).
+  url: 'https://moizk3012-bit.github.io/My-portfolio',
+  basePath: '/My-portfolio/',
   heroNetwork: true,
   heroNetworkOpacity: 0.35,
   homeWorkCount: 4,

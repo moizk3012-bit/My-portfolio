@@ -3,6 +3,7 @@ import type { Project } from '@/data';
 import { projectHref } from '@/lib/projects';
 import { useHoverPreviewTrigger } from '@/hooks/useHoverPreviewTrigger';
 import { AppLink } from '@/components/ui/AppLink';
+import { asset } from '@/lib/paths';
 
 const LiveDot = ({ project }: { project: Project }) => (project.live ? <span className="live-dot" /> : null);
 
@@ -56,7 +57,7 @@ export function ProjectCard({ project, from = 'work' }: { project: Project; from
     <article className="work-card">
       <AppLink className="work-card-link" href={projectHref(project, from)}>
         <div className="work-card-media" style={{ background: project.color }}>
-          <img src={project.image} alt={`${project.title} preview`} loading="lazy" width={800} height={500} />
+          <img src={asset(project.image)} alt={`${project.title} preview`} loading="lazy" width={800} height={500} />
         </div>
         <h3 className="work-card-title">{project.title}</h3>
         <div className="work-card-meta">

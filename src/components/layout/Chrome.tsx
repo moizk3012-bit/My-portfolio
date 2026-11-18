@@ -3,6 +3,7 @@ import type { RefObject } from 'react';
 import { useLocation } from 'react-router';
 import { greetings, nav, projects } from '@/data';
 import { pageIdFromPath } from '@/lib/routes';
+import { asset } from '@/lib/paths';
 import { useMenu, usePageTransition } from '@/hooks/useContexts';
 import { useHamburgerVisibility, useMenuPanel } from '@/hooks/useMenuBehavior';
 import { useMagnetic } from '@/hooks/useMagnetic';
@@ -152,7 +153,7 @@ export function HoverPreview({ modalRef, slidesRef, cursorRef }: PreviewProps) {
             <div key={p.slug} className="preview-slide" style={{ background: p.color }}>
               {/* not lazy (it is scaled to 0 until hover, so lazy images would load late),
                   but low priority so React doesn't preload them ahead of the hero */}
-              <img src={p.image} alt="" decoding="async" fetchPriority="low" width={800} height={500} />
+              <img src={asset(p.image)} alt="" decoding="async" fetchPriority="low" width={800} height={500} />
             </div>
           ))}
         </div>

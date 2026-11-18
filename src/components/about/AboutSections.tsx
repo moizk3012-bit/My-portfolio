@@ -4,6 +4,7 @@ import { ArrowIcon } from '@/components/ui/Icon';
 import { Marquee } from '@/components/ui/Marquee';
 import { FadeIn, Parallax } from '@/components/ui/Reveal';
 import { Stat } from '@/components/ui/Stat';
+import { asset } from '@/lib/paths';
 
 export function AboutLead() {
   return (
@@ -22,7 +23,7 @@ export function AboutLead() {
           </div>
           <div className="about-photo">
             <Parallax amount={0.12} className="about-photo-inner">
-              <img src={person.aboutPhoto} alt={person.name} width={900} height={1125} loading="lazy" />
+              <img src={asset(person.aboutPhoto)} alt={person.name} width={900} height={1125} loading="lazy" />
             </Parallax>
           </div>
         </div>
